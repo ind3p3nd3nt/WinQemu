@@ -8,15 +8,15 @@
 echo "This will install Windows Server 2019 setup an emulator with accelerated graphics to enable playing games.";
 read -p 'Create Windows Disk Container? Y' ready;
 case $ready in
-	Y) sudo apt update && sudo apt install xterm qemu-utils -y && qemu-img create -f qcow2 win.qcow2 100G;
+	Y) sudo apt update && sudo apt install lxterminal qemu-utils -y && qemu-img create -f qcow2 win.qcow2 100G;
 esac
 read -p 'Download Windows Server 2019 180 Days Trial iso directly from Microsoft? Y' ready;
 case $ready in
-	Y) xterm -e wget -O win2019.iso https://is.gd/winserver2019;
+	Y) lxterminal -e wget -O win2019.iso https://is.gd/winserver2019;
 esac
 read -p 'Compile QEmu? Y' ready;
 case $ready in
-	Y) sudo xterm -e sudo apt install libusb-ocaml-dev libusb-0.1-4 libusb-1.0-0-dev libusbredirhost-dev libvirglrenderer-dev libcap-ng-dev libattr1-dev libblockdev-utils-dev fence-agents resource-agents -y && git clone https://github.com/qemu/qemu.git && cd qemu && sudo xterm -e ./configure --enable-system --enable-user --enable-linux-user --enable-guest-agent --enable-guest-agent-msi --enable-gnutls --enable-auth-pam --enable-gcrypt --enable-sdl --enable-vte --enable-curses --enable-iconv --enable-vnc --enable-vnc-jpeg --enable-virtfs --enable-mpath --enable-xen --enable-curl --enable-kvm --enable-rdma --enable-pvrdma --enable-spice --enable-usb-redir --enable-libusb --enable-coroutine-pool --enable-libssh --enable-virglrenderer --enable-tools && sudo xterm -e make -j8 && sudo xterm -e sudo make install&
+	Y) sudo lxterminal -e sudo apt install libusb-ocaml-dev libusb-0.1-4 libusb-1.0-0-dev libusbredirhost-dev libvirglrenderer-dev libcap-ng-dev libattr1-dev libblockdev-utils-dev fence-agents resource-agents -y && git clone https://github.com/qemu/qemu.git && cd qemu && sudo lxterminal -e ./configure --enable-system --enable-user --enable-linux-user --enable-guest-agent --enable-guest-agent-msi --enable-gnutls --enable-auth-pam --enable-gcrypt --enable-sdl --enable-vte --enable-curses --enable-iconv --enable-vnc --enable-vnc-jpeg --enable-virtfs --enable-mpath --enable-xen --enable-curl --enable-kvm --enable-rdma --enable-pvrdma --enable-spice --enable-usb-redir --enable-libusb --enable-coroutine-pool --enable-libssh --enable-virglrenderer --enable-tools && sudo lxterminal -e make -j8 && sudo lxterminal -e sudo make install&
 esac
 read -p 'Run QEmu? Y' ready;
 case $ready in
