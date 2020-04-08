@@ -8,7 +8,7 @@
 echo "This will install Windows Server 2019 setup an emulator with accelerated graphics to enable playing games.";
 read -p 'Create Windows Disk Container? Y' ready;
 case $ready in
-	Y) qemu-img create -f qcow2 win.qcow2 100G;
+	Y) sudo apt update && sudo apt install qemu-utils -y && qemu-img create -f qcow2 win.qcow2 100G;
 esac
 read -p 'Download Windows Server 2019 180 Days Trial iso directly from Microsoft? Y' ready;
 case $ready in
