@@ -2,6 +2,7 @@ This will install Windows Server 2019 180 Days Trial with accelerated graphics o
 Simply execute:
 
 # sh bootstrap-qemu.sh
+# Do not forget to install Windows guest tools from here: https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe to enable accelerated 3d graphics
 
 The End.
 
