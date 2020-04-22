@@ -8,7 +8,7 @@
 echo "This will install Windows Server 2019 setup an emulator with accelerated graphics to enable playing games.";
 read -p 'Create Windows Disk Container? Y' ready;
 case $ready in
-	Y) sudo apt update && sudo apt install tightvnc-viewer vinagre lxterminal qemu qemu-utils -y && qemu-img create -f qcow2 win.qcow2 100G;
+	Y) sudo apt update && sudo apt install tigervnc-viewer vinagre lxterminal qemu qemu-utils -y && qemu-img create -f qcow2 win.qcow2 100G;
 esac
 read -p 'Download Windows Server 2019 180 Days Trial iso directly from Microsoft? Y' ready;
 case $ready in
