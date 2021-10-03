@@ -2,13 +2,13 @@
 MEMORY=2048M
 DISKSIZE=200G
 CPUS=$(getconf _NPROCESSORS_ONLN)
-ACCELSUPPORT=$(lscpu | grep Virt)
+ACCELSUPPORT=$(lscpu | grep VT-x)
 echo "You are installing Windows Server 2019 with spice support: $MEMORY memory in a QEMU Virtual Machine";
 if [ -z "$ACCELSUPPORT" ]; then echo "KVM Acceleration is not supported by your processor"; 
 else echo "$ACCELSUPPORT"
 fi
 if [ -s "/bin/qemu-img" ]; then echo "All QEMU tools are already installed.";
-else sudo apt update && sudo apt install vinagre qemu-system-x86 qemu-utils -y;
+else if [ -f /usr/bin/apt ]; then sudo apt update && sudo apt install vinagre qemu-system-x86 qemu-utils -y; else yum install qemu-system-x86 qemu-img -y; fi;
 fi
 if [ -s "disk.qcow2" ]; then echo "$(du disk.qcow2) Found";
 else qemu-img create -f qcow2 disk.qcow2 $DISKSIZE;
