@@ -13,7 +13,7 @@ fi
 if [ -s "disk.qcow2" ]; then echo "$(du disk.qcow2) Found";
 else qemu-img create -f qcow2 disk.qcow2 $DISKSIZE;
 fi
-if [ -s "win2019.iso" ]; then echo "$(du win2019.iso) Found";
+if [ -s "win2022.iso" ]; then echo "$(du win2022.iso) Found";
 else wget -O win2022.iso https://software-download.microsoft.com/download/sg/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso  --no-check-certificate
 fi
 sudo pkill qemu;
