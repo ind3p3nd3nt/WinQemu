@@ -8,7 +8,7 @@ if [ -z "$ACCELSUPPORT" ]; then echo "KVM Acceleration is not supported by your 
 else echo "$ACCELSUPPORT"
 fi
 if [ -s "/bin/qemu-img" ]; then echo "All QEMU tools are already installed.";
-else if [ -f /usr/bin/apt ]; then sudo apt update && sudo apt install vinagre qemu-system-x86 qemu-utils -y; else yum install qemu-system-x86 qemu-img -y; fi;
+else if [ -f /usr/bin/apt ]; then sudo apt update && sudo apt install vinagre qemu-system-x86 qemu-utils -y; else yum install qemu-system-x86 qemu qemu-img -y; fi;
 fi
 if [ -s "disk.qcow2" ]; then echo "$(du disk.qcow2) Found";
 else qemu-img create -f qcow2 disk.qcow2 $DISKSIZE;
