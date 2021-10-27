@@ -1,3 +1,6 @@
+### Tested on Debian, Ubuntu, Kali and Centos
+
+
 This will install Windows Server 2022 180 Days Trial with accelerated graphics on a Virtual Machine which enables playing games.
 Simply execute:
 
